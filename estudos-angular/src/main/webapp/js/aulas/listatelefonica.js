@@ -27,6 +27,7 @@ function listaTelefonicaCtrl($scope, $http) {
 	
 	$scope.adicionarContato = function(contato){
 		$scope.contatos.push(angular.copy(contato));
+		$scope.contaForm.setPristine();
 		delete $scope.contato;
 	};
 	
