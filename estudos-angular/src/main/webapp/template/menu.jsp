@@ -1,7 +1,7 @@
 
 <div class="btn-group">
 	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		MENU <span class="caret"></span>
+		CURSO 1 <span class="caret"></span>
 	</button>
 	<ul class="dropdown-menu">
 		<li><a href="${linkTo[IndexController].menu('aula1')}">Aula 1 - Introdução Teórica</a></li>
@@ -18,6 +18,16 @@
 		<li><a href="${linkTo[IndexController].menu('aula12')}">AULA 12 - Diretivas Basicas</a></li>	
 		<li><a href="${linkTo[IndexController].menu('aula13')}">AULA 13 - Diretivas Customizadas</a></li>	
 		<li><a href="${linkTo[IndexController].menu('aula14')}">AULA 14 - Requisições Assincronas</a></li>	
+		<li role="separator" class="divider"></li>
+		<li><a href="#">Separated link</a></li>
+	</ul>
+</div>
+<div class="btn-group">
+	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		CURSO 2 <span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu">
+		<li><a href="${linkTo[IndexController].menu('listatelefonica')}">Lista Telefonica</a></li>
 		<li role="separator" class="divider"></li>
 		<li><a href="#">Separated link</a></li>
 	</ul>
