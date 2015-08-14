@@ -18,6 +18,7 @@
 <link href="<c:url value="/css/bootstrap.min.css"/>" rel="stylesheet" type="text/css" media="screen" />
 <link href="<c:url value="/css/styles.css"/>" rel="stylesheet" type="text/css" media="screen" />
 <script type="text/javascript" src="<c:url value="/js/angular.min.js"/>"> </script>
+<script type="text/javascript" src="<c:url value="/js/angular-locale_pt-br.js"/>"> </script>
 <script type="text/javascript" src="<c:url value="/js/angular-sanitize.min.js"/>"> </script>
 
 </head>

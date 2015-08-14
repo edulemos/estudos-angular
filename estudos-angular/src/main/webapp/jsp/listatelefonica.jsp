@@ -4,19 +4,23 @@
 <fieldset ng-controller='listaTelefonicaCtrl'>
 <form name="contatoForm">
 	<legend>Lista Telefonica</legend>
+	<input type="text" ng-model="criterioDeBusca" class="form-control" placeholder="Digite o termo para pesquisar"/>
+	<br>
 	<table class="table table-striped" ng-show="contatos.length > 0">
 		<tr>
 			<th></th>
-			<th>Nome</th>
-			<th>Telefone</th>
-			<th>Operadora</th>
+			<th><a href="" ng-click="ordenarPor('nome')"> Nome </a></th>
+			<th><a href="" ng-click="ordenarPor('telefone')">Telefone</a></th>
+			<th><a href="" ng-click="ordenarPor('operadora')">Operadora</a></th>
+			<th>Data</th>
 		</tr>
 		<tr ng-class="{selecionado: contato.selecionado}"
-			ng-repeat="contato in contatos">
+			ng-repeat="contato in contatos | limitTo:20 | filter:criterioDeBusca | orderBy:criterioDeOrdenacao:direcaoOrdenacao">
 			<td><input type="checkbox" ng-model="contato.selecionado" /></td>
-			<td>{{contato.nome}}</td>
+			<td>{{contato.nome | uppercase }}</td>
 			<td>{{contato.telefone}}</td>
-			<td>{{contato.operadora.nome}}</td>
+			<td>{{contato.operadora.nome | lowercase}}</td>
+			<td>{{contato.data | date:'dd/MM/yyyy' }}</td>
 		</tr>
 	</table>
 
@@ -29,7 +33,7 @@
 	<input type="text" ng-model="contato.telefone" name="telefone" class="form-control" ng-required="true" ng-pattern="/^\d{4,5}-\d{4}$/">
 
 	<label>Operadora</label>
-	<select ng-model="contato.operadora" ng-options="operadora.nome for operadora in operadoras" class="form-control" ng-required="true">
+	<select ng-model="contato.operadora" ng-options="operadora.nome + ' - ' + (operadora.preco | currency) for operadora in operadoras | orderBy:'nome'" class="form-control" ng-required="true">
 		<option value="">selecione uma operadora</option>
 	</select>
 	
@@ -44,7 +48,7 @@
 	<button class="btn btn-primary" ng-click="adicionarContato(contato)" ng-disabled="contatoForm.$invalid">INCLUIR</button>
     <button class="btn btn-danger" ng-click="apagarContato(contatos)" ng-disabled="isContatoSelecionado(contatos)">APAGAR</button>
 
-	<br> {{contatoForm.$valid}}
+	<br> 
 
 
 </form>

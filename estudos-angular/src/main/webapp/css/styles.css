@@ -1,5 +1,4 @@
 body {
-	overflow: hidden;
 	margin-top: 5px;
 }
 
@@ -29,9 +28,6 @@ legend {
 	margin: 0 auto;
 }
 
-.content {
-	min-height: 800px;
-}
 
 .titulo {
 	font-size: x-large;
