@@ -11,6 +11,7 @@
 	<table class="table table-striped" ng-show="contatos.length > 0">
 		<tr>
 			<th></th>
+			<th>Id</th>
 			<th><a href="" ng-click="ordenarPor('nome')"> Nome </a></th>
 			<th><a href="" ng-click="ordenarPor('telefone')">Telefone</a></th>
 			<th><a href="" ng-click="ordenarPor('operadora')">Operadora</a></th>
@@ -18,7 +19,8 @@
 		</tr>
 		<tr ng-repeat="contato in contatos | limitTo:20 | filter:criterioDeBusca | orderBy:criterioDeOrdenacao:direcaoOrdenacao">
 			<td><input type="checkbox" ng-model="contato.selecionado" /></td>
-			<td>{{contato.nome | uppercase }}</td>
+			<td>{{contato.id }}</td>
+			<td>{{contato.nome | name | elipses:15 }}</td>
 			<td>{{contato.telefone}}</td>
 			<td>{{contato.operadora.nome | lowercase}}</td>
 			<td>{{contato.data | date:'dd/MM/yyyy' }}</td>
@@ -44,7 +46,7 @@
       <p class="alert alert-danger" ng-show="contatoForm.telefone.required && contatoForm.telefone.$dirty">Por favor, preencha o telefone</p>
       <p class="alert alert-danger" ng-show="contatoForm.telefone.$error.pattern">O Campo Telefone Deve ter o Formato (9999-9999)</p>
     
-	<button class="btn btn-primary" ng-click="adicionarContato(contato, contatoForm)" ng-disabled="contatoForm.$invalid">INCLUIR</button>
+	<button class="btn btn-primary" ng-click="adicionarContato(contato)" ng-disabled="contatoForm.$invalid">INCLUIR</button>
     <button class="btn btn-danger" ng-click="apagarContato(contatos)" ng-disabled="isContatoSelecionado(contatos)">APAGAR</button>
 
 	<br> 
@@ -53,6 +55,11 @@
 </fieldset>
 <script type="text/javascript" src="<c:url value="/js/lista-telefonica/app.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/js/lista-telefonica/controller/listaTelefonicaCtrl.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/js/lista-telefonica/services/contatoApiService.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/js/lista-telefonica/services/operadorasApiService.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/js/lista-telefonica/config.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/js/lista-telefonica/filters/name.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/js/lista-telefonica/filters/elipses.js"/>"></script>
 
 
 <%@ include file="/template/footer.jsp"%>

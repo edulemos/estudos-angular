@@ -1,6 +1,6 @@
 app.controller('listaTelefonicaCtrl', listaTelefonicaCtrl);
 
-function listaTelefonicaCtrl($scope, $http) {
+function listaTelefonicaCtrl($scope, contatosAPI, operadorasAPI) {
 	console.log('Iniciou a listaTelefonicaCtrl');
 
 	$scope.contatos = [];
@@ -14,23 +14,30 @@ function listaTelefonicaCtrl($scope, $http) {
 	}
 
 	var carregarContatos = function() {
-		$http.get("http://localhost:8080/estudos-angular/getContatos").success(
+		contatosAPI.getContatos().success(
 				function(data) {
 					$scope.contatos = data;
 				});
 	}
 
 	var carregarOperadoras = function() {
-		$http.get("http://localhost:8080/estudos-angular/getOperadoras")
+		operadorasAPI.getOperadoras()
 				.success(function(data) {
 					$scope.operadoras = data;
 				});
 	}
 
 	$scope.adicionarContato = function(contato) {
-		$scope.contatos.push(angular.copy(contato));
-		$scope.contaForm.setPristine();
-		delete $scope.contato;
+		contatosAPI.saveContato(contato)
+				.success(function(data) {
+					$scope.msg =  data;
+					delete $scope.contato;
+					$scope.contatoForm.$setPristine();
+					carregarContatos();
+				}).error(function(data) {
+					$scope.msg =  'erro ao adicionar contato:' + data;
+				});
+		
 	};
 
 	$scope.apagarContato = function(contatos) {
