@@ -1,5 +1,6 @@
 package br.com.edulemos.service;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -27,6 +28,11 @@ public class ContatoService {
 
 	public List<Operadora> listAllOperadoras() {
 		return entityManager.createQuery("select o from Operadora o", Operadora.class).getResultList();
+	}
+
+	public void addContato(Contato contato) {
+		contato.setData(new Date());
+		entityManager.persist(contato);
 	}
 
 }

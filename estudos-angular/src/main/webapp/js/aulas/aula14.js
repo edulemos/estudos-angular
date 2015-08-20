@@ -1,7 +1,5 @@
 var app = angular.module("app", []);
 
-
-
 function aula14Controller($scope, $http) {
 	console.log('Iniciou o controller 14');
 

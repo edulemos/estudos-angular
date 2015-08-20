@@ -1,4 +1,4 @@
-var app = angular.module("app", []);
+app.controller('listaTelefonicaCtrl', listaTelefonicaCtrl);
 
 function listaTelefonicaCtrl($scope, $http) {
 	console.log('Iniciou a listaTelefonicaCtrl');
@@ -49,4 +49,3 @@ function listaTelefonicaCtrl($scope, $http) {
 	carregarOperadoras();
 }
 
-app.controller('listaTelefonicaCtrl', listaTelefonicaCtrl);
