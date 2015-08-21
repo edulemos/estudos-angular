@@ -6,6 +6,8 @@ function listaTelefonicaCtrl($scope, contatosAPI, operadorasAPI) {
 	$scope.contatos = [];
 
 	$scope.operadoras = [];
+	
+	$scope.error = "erro";
 
 	$scope.isContatoSelecionado = function(contatos) {
 		return !contatos.some(function(contato) {
@@ -17,7 +19,9 @@ function listaTelefonicaCtrl($scope, contatosAPI, operadorasAPI) {
 		contatosAPI.getContatos().success(
 				function(data) {
 					$scope.contatos = data;
-				});
+				}).error(function(data) {
+					$scope.msg =  'nao foi possivel carregar os contatos';
+				});;
 	}
 
 	var carregarOperadoras = function() {

@@ -1,3 +1,5 @@
+var app = angular.module("app", []);
+
 app.controller('aula07Controller', function($scope){
 	
 	$scope.nomes = ['edu','Ana','Miguel'];

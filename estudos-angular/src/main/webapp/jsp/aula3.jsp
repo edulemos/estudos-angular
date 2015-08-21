@@ -9,4 +9,8 @@
 	
 </fieldset>
 
+<script type="text/javascript">
+	var app = angular.module("app", []);
+</script>
+
 <%@ include file="/template/footer.jsp"%>

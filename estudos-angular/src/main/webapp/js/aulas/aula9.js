@@ -1,3 +1,5 @@
+var app = angular.module("app", []);
+
 app.factory('Pessoa', function(){
 	
 	var Pessoa = function (){

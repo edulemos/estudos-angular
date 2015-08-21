@@ -1,3 +1,5 @@
+var app = angular.module("app", []);
+
 app.controller('aula10Controller', aula10Controller);
 
 //nome filtro tem que concatenar com Filter ou $filter

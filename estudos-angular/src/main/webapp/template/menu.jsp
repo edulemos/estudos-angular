@@ -24,7 +24,7 @@
 </div>
 <div class="btn-group">
 	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		CURSO 2 <span class="caret"></span>
+		PROJETO PRÁTICO <span class="caret"></span>
 	</button>
 	<ul class="dropdown-menu">
 		<li><a href="${linkTo[IndexController].menu('listatelefonica')}">Lista Telefonica</a></li>

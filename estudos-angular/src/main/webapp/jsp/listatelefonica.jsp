@@ -5,7 +5,9 @@
 <fieldset ng-controller='listaTelefonicaCtrl' >
 <form name="contatoForm" novalidate="novalidate">
 	<legend>Lista Telefonica</legend>
-	<div class="alert alert-info" ng-show="msg != ''">{{msg}}</div>
+	<uialert title="Ops Aconteceu um erro" >
+	    {{error}}
+	</uialert>
 	<input type="text" ng-model="criterioDeBusca" class="form-control" placeholder="Digite o termo para pesquisar"/>
 	<br>
 	<table class="table table-striped" ng-show="contatos.length > 0">
@@ -60,6 +62,7 @@
 <script type="text/javascript" src="<c:url value="/js/lista-telefonica/config.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/js/lista-telefonica/filters/name.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/js/lista-telefonica/filters/elipses.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/js/lista-telefonica/diretivas/alert.js"/>"></script>
 
 
 <%@ include file="/template/footer.jsp"%>

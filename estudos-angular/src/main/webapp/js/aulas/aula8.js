@@ -1,3 +1,5 @@
+var app = angular.module("app", []);
+
 app.controller('aula08Controller', function($scope){
 	
 	$scope.pessoa = novaPessoa();
