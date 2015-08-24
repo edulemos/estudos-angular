@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="app">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Angular</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/styles.css" rel="stylesheet" type="text/css" media="screen" />
+
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/angular-locale_pt-br.js"></script>
+
+</head>
+<body>
+	<div class="container">
+		<div class="row header">
+			<div class="col-md-4">
+				<span class="titulo">ANGULAR JS</span>
+			</div>
+			<div class="col-md-8"></div>
+		</div>
+		<div class="row jumbotron">
+			<div class="col-md-12 content">
+
+				<fieldset ng-controller='cadastroClientesCtrl'>
+
+					<legend>CADASTRO CLIENTES</legend>
+
+					<form name="clienteForm" novalidate>
+
+						<label>Nome</label> <input type="text" ng-model="contato.nome" name="nome" class="form-control" ng-required="true" ng-minlength="3" /> <label>Telefone</label>
+						<input type="text" ng-model="contato.telefone" name="telefone" class="form-control" ng-required="true" ng-pattern="/^\d{4,5}-\d{4}$/" />
+
+					</form>
+
+					<hr>
+
+					<input type="text" ng-model="criterioDeBusca" class="form-control" placeholder="Digite o termo para pesquisar" /> <br>
+
+					<table class="table table-striped">
+						<tr>
+							<th>Nome</th>
+							<th>Telefone</th>
+						</tr>
+						<tr ng-repeat="cliente in clientes">
+							<td>{{cliente.nome}}</td>
+							<td>{{cliente.telefone}}</td>
+						</tr>
+					</table>
+
+				</fieldset>
+
+
+			</div>
+		</div>
+
+	</div>
+	<!-- JS -->
+	<script type="text/javascript" src="js/jquery.js "></script>
+	<script type="text/javascript" src="js/bootstrap.min.js "></script>
+
+	<script type="text/javascript" src="js/app/app.js" ></script>
+	<script type="text/javascript" src="js/app/config/config.js" ></script>
+	<!-- 	<script type="text/javascript" src="js/app/config/route-config.js"/> -->
+	<script type="text/javascript" src="js/app/controller/cadastroClienteCtrl.js" ></script>
+	<script type="text/javascript" src="js/app/services/clienteService.js" ></script>
+	<script type="text/javascript" src="js/angular-route.min.js" ></script>
+
+</body>
+</html>

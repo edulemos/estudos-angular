@@ -29,7 +29,7 @@
 	<ul class="dropdown-menu">
 		<li><a href="${linkTo[IndexController].menu('listatelefonica')}">Lista Telefonica</a></li>
 		<li role="separator" class="divider"></li>
-		<li><a href="#">Separated link</a></li>
+		<li><a href="${linkTo[IndexController].menu('cadastroclientes')}">Cadastro Clientes</a></li>
 	</ul>
 </div>
 <div class="btn-group pull-right" role="group" aria-label="...">

@@ -32,10 +32,13 @@
 	<hr>
 
 	<label>Nome</label>
-	 <input type="text" ng-model="contato.nome" name="nome"	class="form-control" ng-required="true" ng-minlength="10">
+	 <input type="text" ng-model="contato.nome" name="nome"	class="form-control" ng-required="true" ng-minlength="3"/>
 	 
 	<label>Telefone</label>
-	<input type="text" ng-model="contato.telefone" name="telefone" class="form-control" ng-required="true" ng-pattern="/^\d{4,5}-\d{4}$/">
+	<input type="text" ng-model="contato.telefone" name="telefone" class="form-control" ng-required="true" ng-pattern="/^\d{4,5}-\d{4}$/"/>
+	
+	<label>Data</label>
+	<input type="date" ng-model="contato.data" name="data" class="form-control"  ui-date />
 
 	<label>Operadora</label>
 	<select ng-model="contato.operadora" ng-options="operadora.nome + ' - ' + (operadora.preco | currency) for operadora in operadoras | orderBy:'nome'" class="form-control" ng-required="true">
@@ -63,6 +66,8 @@
 <script type="text/javascript" src="<c:url value="/js/lista-telefonica/filters/name.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/js/lista-telefonica/filters/elipses.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/js/lista-telefonica/diretivas/alert.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/js/lista-telefonica/diretivas/uidate.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/js/angular-route.min.js"/>"></script>
 
 
 <%@ include file="/template/footer.jsp"%>

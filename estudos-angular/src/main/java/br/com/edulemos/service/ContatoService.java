@@ -1,6 +1,5 @@
 package br.com.edulemos.service;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -31,7 +30,6 @@ public class ContatoService {
 	}
 
 	public void addContato(Contato contato) {
-		contato.setData(new Date());
 		entityManager.persist(contato);
 	}
 
