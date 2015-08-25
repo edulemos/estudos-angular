@@ -30,6 +30,13 @@ public class ClienteController {
 		result.use(json()).withoutRoot().from(listAllContatos).recursive().serialize();
 	}
 	
+	@Path(value = "/getCliente/{id}")
+	@Consumes(value = "application/json", options = WithoutRoot.class)
+	public void getCliente(Long id) {
+		Cliente  cliente = service.getCliente(id);
+		result.use(json()).withoutRoot().from(cliente).recursive().serialize();
+	}
+	
 	@Post
 	@Path(value = "/adicionarCliente")
 	@Consumes(value = "application/json", options = WithoutRoot.class)

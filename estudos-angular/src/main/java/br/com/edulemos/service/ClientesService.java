@@ -28,4 +28,10 @@ public class ClientesService {
 		entityManager.persist(Cliente);
 	}
 
+	public Cliente getCliente(Long id) {
+		return entityManager.createQuery("select c from Cliente c where c.id = :id", Cliente.class)
+				.setParameter("id",id)
+				.getSingleResult();
+	}
+
 }

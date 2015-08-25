@@ -1,8 +1,24 @@
-app.config(function ($routeProvider) {
+app.config(function ($routeProvider, $locationProvider) {
 	
 	$routeProvider.when("/lista-clientes", {
-		templateUrl: "../html/lista-clientes.html",
-		controller: "cadastroClientesCtrl"
+		templateUrl: "view/cliente-list.html",
+		controller: "cadastroClientesCtrlList",
+		resolve: {
+			clientes: function (clienteService) {
+				return clienteService.listarClientes();
+			}
+		}
 	});
 	
+	$routeProvider.when("/form-cliente/:id", {
+		templateUrl: "view/cliente-form.html",
+		controller: "cadastroClientesCtrlForm",
+			resolve: {
+				cliente: function (clienteService, $route) {
+					return clienteService.getCliente($route.current.params.id);
+				}
+			}
+	});
+	
+
 });
