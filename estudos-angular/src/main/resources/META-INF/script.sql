@@ -11,5 +11,5 @@ insert into Contato values (3, '2015-07-03', 'joao de bosco' , '96262-1521', 3 )
 insert into Contato values (4, '2015-06-02', 'manel de garincha', '2520-0020', 4  );
 insert into Contato values (5, '2015-05-01', 'carla de fujimoto', '3300-1010', 5  );
 
-insert into endereco values (1,'SAO CRISTOVAO','20921-440','RIO DE JANEIRO','403','SAO CRISTOVAO','180','CAMPO','RJ');
+insert into endereco values (1,'SAO CRISTOVAO','20921-440','403','RIO DE JANEIRO','CAMPO DE SAO CRISTOVAO','180','RJ');
 insert into cliente values (1,'EDU','(21)2570-3555',1);

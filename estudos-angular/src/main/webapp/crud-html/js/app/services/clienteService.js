@@ -8,9 +8,25 @@ app.factory("clienteService",function($http, config){
 		return $http.get(config.baseUrl + "/getCliente/" + id);
 	};
 	
+	var _estados = function () {
+		return $http.get("json/estados.json");
+	};
+	
+	var _consultaCep = function (cep) {
+		return $http.get("https://viacep.com.br/ws/"+cep+"/json/");
+	};
+	
+	var _novoCliente = function () {
+		return {			
+		}
+	};
+	
 	return{
 		listarClientes: _listarClientes,
-		getCliente: _getCliente
+		getCliente: _getCliente,
+		novoCliente: _novoCliente,
+		consultaCep: _consultaCep,
+		estados: _estados
 	}
 	
 });

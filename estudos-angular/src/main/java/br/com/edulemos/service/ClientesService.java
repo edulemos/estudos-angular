@@ -24,14 +24,22 @@ public class ClientesService {
 		return entityManager.createQuery("select c from Cliente c", Cliente.class).getResultList();
 	}
 
-	public void adicionarClientes(Cliente Cliente) {
-		entityManager.persist(Cliente);
+	public void adicionarClientes(Cliente cliente) {
+		entityManager.persist(cliente);
 	}
 
 	public Cliente getCliente(Long id) {
 		return entityManager.createQuery("select c from Cliente c where c.id = :id", Cliente.class)
 				.setParameter("id",id)
 				.getSingleResult();
+	}
+
+	public void alterarCliente(Cliente cliente) {
+		entityManager.merge(cliente);
+	}
+	
+	public void removerCliente(Cliente cliente) {
+		entityManager.remove(cliente);
 	}
 
 }

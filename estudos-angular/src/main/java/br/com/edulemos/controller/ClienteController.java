@@ -37,12 +37,27 @@ public class ClienteController {
 		result.use(json()).withoutRoot().from(cliente).recursive().serialize();
 	}
 	
-	@Post
 	@Path(value = "/adicionarCliente")
 	@Consumes(value = "application/json", options = WithoutRoot.class)
 	public void adicionarCliente(Cliente cliente) {
 		service.adicionarClientes(cliente);
-		result.use(json()).withoutRoot().from("Contato Adicionado.").serialize();
+		result.use(json()).withoutRoot().from("Cliente adicionado com sucesso.").serialize();
+	}
+	
+	@Post
+	@Path(value = "/alterarCliente")
+	@Consumes(value = "application/json", options = WithoutRoot.class)
+	public void altrerarCliente(Cliente cliente) {
+		service.alterarCliente(cliente);
+		result.use(json()).withoutRoot().from("Cliente alterado com sucesso.").serialize();
+	}
+	
+	@Post
+	@Path(value = "/removerCliente")
+	@Consumes(value = "application/json", options = WithoutRoot.class)
+	public void removerCliente(Cliente cliente) {
+		service.removerCliente(cliente);
+		result.use(json()).withoutRoot().from("Cliente removido com sucesso.").serialize();
 	}
 
 }

@@ -18,9 +18,18 @@ public class Endereco implements Serializable {
 	@GeneratedValue
 	private long id;
 
-	@Column(name = "tipo_logradouro", nullable = false, length = 32)
-	private String tipoLogradouro;
+	@Column(name = "cep", nullable = false, length = 9)
+	private String cep;
+	
+	@Column(name = "uf", nullable = false, length = 2)
+	private String uf;
+	
+	@Column(name = "localidade", nullable = false, length = 64)
+	private String localidade;
 
+	@Column(name = "bairro", nullable = false, length = 64)
+	private String bairro;
+	
 	@Column(name = "logradouro", nullable = false, length = 64)
 	private String logradouro;
 
@@ -30,18 +39,6 @@ public class Endereco implements Serializable {
 	@Column(name = "complemento", nullable = false, length = 32)
 	private String complemento;
 
-	@Column(name = "bairro", nullable = false, length = 64)
-	private String bairro;
-
-	@Column(name = "cep", nullable = false, length = 9)
-	private String cep;
-
-	@Column(name = "uf", nullable = false, length = 2)
-	private String uf;
-
-	@Column(name = "cidade", nullable = false, length = 64)
-	private String cidade;
-
 	public long getId() {
 		return id;
 	}
@@ -50,12 +47,12 @@ public class Endereco implements Serializable {
 		this.id = id;
 	}
 
-	public String getTipoLogradouro() {
-		return tipoLogradouro;
+	public String getLocalidade() {
+		return localidade;
 	}
 
-	public void setTipoLogradouro(String tipoLogradouro) {
-		this.tipoLogradouro = tipoLogradouro;
+	public void setLocalidade(String localidade) {
+		this.localidade = localidade;
 	}
 
 	public String getLogradouro() {
@@ -96,14 +93,6 @@ public class Endereco implements Serializable {
 
 	public void setUf(String uf) {
 		this.uf = uf;
-	}
-
-	public String getCidade() {
-		return cidade;
-	}
-
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
 	}
 
 	public String getBairro() {
