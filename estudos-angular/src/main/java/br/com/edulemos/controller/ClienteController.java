@@ -37,6 +37,7 @@ public class ClienteController {
 		result.use(json()).withoutRoot().from(cliente).recursive().serialize();
 	}
 	
+	
 	@Path(value = "/adicionarCliente")
 	@Consumes(value = "application/json", options = WithoutRoot.class)
 	public void adicionarCliente(Cliente cliente) {

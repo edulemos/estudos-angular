@@ -10,11 +10,13 @@
 		<th>Telefone</th>
 		<th>A&ccedil;&otilde;es</th>
 	</tr>
-	<tr ng-repeat="c in clientes">
+	<tr ng-repeat="c in clientes | filter:criterioDeBusca">
 		<td>{{c.nome}}</td>
 		<td>{{c.telefone}}</td>
-		<td><a href="#form-cliente/{{c.id}}"><button class="btn btn-primary">EDITAR</button></a>
-</td>
+		<td>
+			<a href="#form-cliente/{{c.id}}"><button class="btn btn-primary">EDITAR</button></a>
+			<button class="btn btn-primary" ng-click="removerCliente(c)" confirmation-needed="Confirma a exclus&atilde;o do cliente {{c.nome}}?">EXCLUIR</button>
+		</td>
 	</tr>
 </table>
 

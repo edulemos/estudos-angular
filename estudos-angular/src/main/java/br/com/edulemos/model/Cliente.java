@@ -1,5 +1,6 @@
 package br.com.edulemos.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -23,7 +24,7 @@ public class Cliente {
 	@Column(name = "telefone", nullable = false, length = 14)
 	private String telefone;
 
-	@OneToOne(fetch = FetchType.EAGER)
+	@OneToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn(name = "fk_endereco")
 	private Endereco endereco;
 

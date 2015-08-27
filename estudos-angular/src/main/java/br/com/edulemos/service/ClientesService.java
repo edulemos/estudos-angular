@@ -6,6 +6,7 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 import br.com.edulemos.model.Cliente;
+import br.com.edulemos.model.Endereco;
 
 public class ClientesService {
 
@@ -25,7 +26,7 @@ public class ClientesService {
 	}
 
 	public void adicionarClientes(Cliente cliente) {
-		entityManager.persist(cliente);
+		entityManager.persist(entityManager.contains(cliente) ? cliente : entityManager.merge(cliente));
 	}
 
 	public Cliente getCliente(Long id) {
@@ -39,7 +40,7 @@ public class ClientesService {
 	}
 	
 	public void removerCliente(Cliente cliente) {
-		entityManager.remove(cliente);
+		entityManager.remove(entityManager.contains(cliente) ? cliente : entityManager.merge(cliente));
 	}
 
 }

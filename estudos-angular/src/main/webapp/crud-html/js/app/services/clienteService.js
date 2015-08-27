@@ -8,6 +8,14 @@ app.factory("clienteService",function($http, config){
 		return $http.get(config.baseUrl + "/getCliente/" + id);
 	};
 	
+	var _adicionarCliente = function (cliente) {
+		return $http.post(config.baseUrl + "/adicionarCliente", cliente);
+	};
+	
+	var _excluirCliente = function (cliente) {
+		return $http.post(config.baseUrl + "/removerCliente", cliente);
+	};
+	
 	var _estados = function () {
 		return $http.get("json/estados.json");
 	};
@@ -25,6 +33,8 @@ app.factory("clienteService",function($http, config){
 		listarClientes: _listarClientes,
 		getCliente: _getCliente,
 		novoCliente: _novoCliente,
+		adicionarCliente: _adicionarCliente,
+		excluirCliente: _excluirCliente,
 		consultaCep: _consultaCep,
 		estados: _estados
 	}

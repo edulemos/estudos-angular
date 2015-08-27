@@ -1,7 +1,5 @@
 <%@ include file="/template/header.jsp"%>
 
-
-
 <fieldset ng-controller='listaTelefonicaCtrl' >
 <form name="contatoForm" novalidate="novalidate">
 	<legend>Lista Telefonica</legend>
@@ -35,7 +33,7 @@
 	 <input type="text" ng-model="contato.nome" name="nome"	class="form-control" ng-required="true" ng-minlength="3"/>
 	 
 	<label>Telefone</label>
-	<input type="text" ng-model="contato.telefone" name="telefone" class="form-control" ng-required="true" ng-pattern="/^\d{4,5}-\d{4}$/"/>
+	<input type="text" ng-model="contato.telefone" name="telefone" class="form-control" ng-required="true" ng-pattern="/\d{4,5}-\d{4}$/"/>
 	
 	<label>Data</label>
 	<input type="date" ng-model="contato.data" name="data" class="form-control"  ui-date />
