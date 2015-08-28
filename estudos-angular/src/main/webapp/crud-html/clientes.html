@@ -10,25 +10,26 @@
 <link href="css/styles.css" rel="stylesheet" type="text/css" media="screen" />
 
 <script type="text/javascript" src="js/angular.min.js"></script>
-<script type="text/javascript" src="js/angular-route.min.js" ></script>
+<script type="text/javascript" src="js/angular-route.min.js"></script>
 <script type="text/javascript" src="js/angular-locale_pt-br.js"></script>
 <script type="text/javascript" src="js/ngMask.js"></script>
+<script type="text/javascript" src="js/message-center.js"></script>
 
-<script type="text/javascript" src="js/app/app.js" ></script>
-<script type="text/javascript" src="js/app/controller/cadastroClienteCtrlList.js" ></script>
-<script type="text/javascript" src="js/app/controller/cadastroClienteCtrlForm.js" ></script>
-<script type="text/javascript" src="js/app/services/clienteService.js" ></script>
-<script type="text/javascript" src="js/app/diretivas/confirm.js" ></script>
-<script type="text/javascript" src="js/app/config/config.js" ></script>
+<script type="text/javascript" src="js/app/app.js"></script>
+<script type="text/javascript" src="js/app/controller/cadastroClienteCtrl.js"></script>
+<script type="text/javascript" src="js/app/services/clienteService.js"></script>
+<script type="text/javascript" src="js/app/services/flash.js"></script>
+<script type="text/javascript" src="js/app/diretivas/confirm.js"></script>
+<script type="text/javascript" src="js/app/config/config.js"></script>
 <script type="text/javascript" src="js/app/config/route-config.js"></script>
 
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 <style type="text/css">
-.div-error{
-   color: red;
-   font-weight: bold;
+.div-error {
+	color: red;
+	font-weight: bold;
 }
 </style>
 
@@ -48,9 +49,11 @@
 				<fieldset>
 
 					<legend>CADASTRO CLIENTES</legend>
+					{{flash.getMessage()}}
 					
+
 					<div ng-view></div>
-					
+
 				</fieldset>
 
 
@@ -58,7 +61,7 @@
 		</div>
 
 	</div>
-	
+
 
 </body>
 </html>
