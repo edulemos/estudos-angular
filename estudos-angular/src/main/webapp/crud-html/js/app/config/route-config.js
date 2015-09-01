@@ -1,6 +1,8 @@
 app.config(function($routeProvider) {
 
-	$routeProvider.when("/lista-clientes", {
+	$routeProvider
+	
+	.when("/lista-clientes", {
 		templateUrl : "view/cliente-list.html",
 		controller : "cadastroClientesCtrl",
 		resolve : {
@@ -14,9 +16,9 @@ app.config(function($routeProvider) {
 				return clienteService.estados();
 			}
 		}
-	});
-
-	$routeProvider.when("/form-cliente", {
+	})
+	
+	.when("/form-cliente", {
 		templateUrl : "view/cliente-form.html",
 		controller : "cadastroClientesCtrl",
 		resolve : {
@@ -30,9 +32,9 @@ app.config(function($routeProvider) {
 				return clienteService.estados();
 			}
 		}
-	});
+	})
 
-	$routeProvider.when("/form-cliente/:id", {
+	.when("/form-cliente/:id", {
 		templateUrl : "view/cliente-form.html",
 		controller : "cadastroClientesCtrl",
 		resolve : {
@@ -49,6 +51,12 @@ app.config(function($routeProvider) {
 				return "Cliente salvo";
 			}
 		}
-	});
+	})
+	
+	.otherwise({
+        redirectTo: '/lista-clientes'
+      });
+	
+	;
 
 });

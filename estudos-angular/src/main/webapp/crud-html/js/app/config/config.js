@@ -1,5 +1,5 @@
 app.value("config",{
 
-	baseUrl: "http://localhost:8080/estudos-angular"
+	baseUrl: "http://rest-ws.elasticbeanstalk.com"
 	
 });
