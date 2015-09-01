@@ -44,6 +44,9 @@ app.config(function($routeProvider) {
 			},
 			estados : function(clienteService) {
 				return clienteService.estados();
+			},
+			message : function() {
+				return "Cliente salvo";
 			}
 		}
 	});

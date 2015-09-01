@@ -1,1 +1,2 @@
-var app = angular.module("app", ["ngRoute","ngMask"]);
+var app = angular.module("app", [ "ngRoute", "ngMask" ]);
+

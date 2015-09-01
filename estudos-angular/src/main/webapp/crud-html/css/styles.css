@@ -55,3 +55,8 @@ input.ng-valid.ng-touched{
 .selecionado{
 	background-color: yellow;
 }
+
+.div-error {
+	color: red;
+	font-weight: bold;
+}
